@@ -2,7 +2,11 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-simp',
-  templateUrl: './simp.component.html',
+  template: `
+    <p>
+      Component from Module
+    </p>
+  `,
   styleUrls: ['./simp.component.css']
 })
 export class SimpComponent implements OnInit {
