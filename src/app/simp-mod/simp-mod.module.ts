@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {ModuleWithProviders, NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MathService} from "../math.service";
 import {SimpComponent} from "../simp/simp.component";
@@ -8,7 +8,14 @@ import {SimpComponent} from "../simp/simp.component";
     CommonModule
   ],
   declarations: [SimpComponent],
-  providers: [MathService],
   exports: [SimpComponent]
 })
-export class SimpModModule { }
+export class SimpModModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: SimpModModule,
+      providers: [MathService]
+    }
+  }
+
+}
